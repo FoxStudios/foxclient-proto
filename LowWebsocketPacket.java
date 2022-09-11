@@ -9,9 +9,7 @@ public enum LowWebsocketPacket {
     S2C_LOGIN_SUCCESS((byte) 4),
     COMMON_LOGGED_IN_PACKET((byte) 5);
 
-    LowWebsocketPacket(byte id) {
-
-    }
+    LowWebsocketPacket(byte id) {}
 
     public byte getId() {
         return (byte) ordinal();
