@@ -1,5 +1,6 @@
 package net.foxes4life.foxclient.networking.shared;
 
+import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -13,6 +14,14 @@ public class HashUtils {
             return null;
         }
         byte[] strBytes = str.getBytes(StandardCharsets.UTF_8);
-        return new String(md.digest(strBytes));
+
+        BigInteger no = new BigInteger(1, md.digest(strBytes));
+        String hashtext = no.toString(16);
+
+        // Add preceding 0s to make it 32 bit
+        while (hashtext.length() < 32) {
+            hashtext = "0" + hashtext;
+        }
+        return hashtext;
     }
 }
