@@ -7,7 +7,7 @@ import java.security.NoSuchAlgorithmException;
 
 public class HashUtils {
     public static String hash(String str) {
-        MessageDigest md = null;
+        MessageDigest md;
         try {
             md = MessageDigest.getInstance("SHA-1");
         } catch (NoSuchAlgorithmException e) {
