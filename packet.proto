@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package foxclient;
+
+message Packet {
+  oneof packet {
+    PlaceholderPacket placeholder                         = 2;
+  };
+}
+
+// ---------   GENERIC TYPES (used in packets)   ---------
+
+/* todo */
+
+// --------- PACKET TYPES (suffixed with Packet) ---------
+message PlaceholderPacket {}
